@@ -6,11 +6,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { psReadAsText } from "../helpers/file-reader";
 import ColorPicker from "./ColorPicker";
+import { addToIpfs } from "../services/ipfs";
+import getConfig from "next/config";
 
 interface UploadImage {
   preview?: string;
   raw?: File;
 }
+
+const { publicRuntimeConfig: { ipfsPublicEndpoint } } = getConfig();
 export default function EditModal({
   show,
   onClose
@@ -38,13 +42,11 @@ export default function EditModal({
 
     const image =  await psReadAsText(newLogo.raw as File);
 
-    axios.post("/api/image", {
-      image
-    })
-      .then(({ data }) => {
+    addToIpfs(image as string)
+      .then(({path}) => {
         setName(newName);
         setPrimary(newPrimary);
-        setLogo({ preview: data, raw: undefined});
+        setLogo({ preview: `${ipfsPublicEndpoint}/${path}`, raw: undefined});
         setToken(newToken);
         handleClose();
       })
