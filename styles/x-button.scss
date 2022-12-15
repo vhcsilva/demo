@@ -1,0 +1,82 @@
+$small-icon: 14px;
+$only-child: 14px;
+
+.btn + .btn {
+  margin-left: 8px;
+}
+
+.btn-outline {
+  &-primary {
+    border-color: var(--bs-primary);
+    &:hover {
+      color: $white;
+      border-color: rgba(var(--bs-primary), 0.1);
+      background-color: rgba(var(--bs-primary), 0.1);
+    }
+  }
+  &-purple {
+    &:hover {
+      color: $white;
+      background-color: rgba($purple, 0.1);
+    }
+  }
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+
+  &:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    filter: brightness(0.85);
+  }
+
+  &:disabled,
+  &:focus {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+}
+
+.btn-purple {
+  background-color: var(--bs-purple);
+  border-color: var(--bs-purple);
+
+  &:hover {
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+    filter: brightness(0.85);
+  }
+
+  &:disabled,
+  &:focus {
+    background-color: var(--bs-purple);
+    border-color: var(--bs-purple);
+  }
+}
+
+button.btn:not(.not-svg),
+a.btn:not(.brand),
+.main-nav-link:not(.brand) {
+  svg,
+  i {
+    &:not(:only-child) {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+      &:last-child {
+        margin-left: 8px;
+      }
+      width: $small-icon;
+      height: $small-icon;
+      margin-top: -2px;
+      margin-bottom: -2px;
+    }
+
+    &:only-child {
+      width: $only-child;
+      height: $only-child;
+    }
+  }
+}

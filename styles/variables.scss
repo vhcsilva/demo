@@ -1,0 +1,266 @@
+$white: #ffffff;
+$black: #000000;
+
+//Brand Colors
+$primary: #4250e4;
+$secondary: #fd8b2a;
+
+//Buttons, Label and States
+$info: #87c7ec;
+$purple: #9669ed;
+$success: #35e0ad;
+$danger: #eb5757;
+$warning: #ee9240;
+$light-warning: #CCAB38;
+//Specials
+$dark-gray: #20222b;
+$gray: #c4c7d3;
+$gray-100: #E3E3E8;
+$gray-500: #73758C;
+$gray-700: #454654;
+$gray-850: #23232A;
+$gray-900: #17171C;
+$gray-950: #0C0C0E;
+$light-gray: #434758;
+$blue: #4250e4;
+$blue-dark: #283089;
+// Fix-ME: Remove disabled color
+$disabled: #423b51;
+
+
+$orange-500: #FF6A2C;
+
+$bg: #0d0f19;
+$bg-opac: rgba($white, 0.1);
+$bg-shadow: #151720;
+$bg-blue-shadow: #1825ad;
+$toast-font-size: 1rem;
+$m: 16px;
+
+$navbar-height: 70px;
+$statusbar-height: 80px;
+//Enable negative margins
+$enable-negative-margins: true;
+
+// NOTE Attention, the variables colors change need be before boostrap imports or not work.
+// to check see on console `@debug $theme-colors;`
+
+@import "~bootstrap/scss/functions";
+
+$more-bg: (
+  "dark": $bg,
+  "shadow": $bg-shadow,
+  "opac": $bg-opac,
+  "purple-30": rgba($purple, 0.3),
+  "blue": $blue,
+  "success-15": rgba($success, 0.15),
+  "success-50": rgba($success, 0.5),
+  "dark-gray": $dark-gray,
+  "light-gray": $light-gray,
+  "disabled": $disabled,
+  "danger-50": rgba($danger, 0.5),
+  "warning-opac-25": rgba($warning, 0.25),
+  "danger-opac-25": rgba($warning, 0.25),
+  "white-10": rgba($white, 0.1),
+  "white-30": rgba($white, 0.3),
+  "white-40": rgba($white, 0.4),
+  "white-50": rgba($white, 0.5),
+  "white-70": rgba($white, 0.7),
+  "danger-10": rgba($danger, 0.1),
+  "danger-80": rgba($danger, 0.8),
+  "info-10": rgba($info, 0.1),
+  "primary-30": rgba($primary, 0.3),
+  "info-30": rgba($info, 0.3),
+  "info-80": rgba($info, 0.8),
+  "success-30": rgba($success, 0.3),
+  "success-80": rgba($success, 0.8),
+  "danger-30": rgba($danger, 0.3),
+  "danger-70": rgba($danger, 0.7),
+  "warning-30": rgba($warning, 0.3),
+  "gray-70": rgba($gray, 0.7),
+  "gray-100": $gray-100,
+  "gray-500": $gray-500,
+  "gray-700": $gray-700,
+  "gray-850": $gray-850,
+  "gray-900": $gray-900,
+  "gray-950": $gray-950,
+  "orange-500": $orange-500,
+  "orange-800": rgba($orange-500, 0.8),
+  "light-warning-30": rgba($light-warning, 0.3),
+  "light-warning": $light-warning,
+  "blue-dark": $blue-dark,
+  "blue-shadow": $bg-blue-shadow,
+);
+
+$more-colors: (
+  "blue-dark": $blue-dark,
+  "blue-shadow": $bg-blue-shadow,
+  "gray": $gray,
+  "gray-100": $gray-100,
+  "gray-500": $gray-500,
+  "gray-700": $gray-700,
+  "gray-850": $gray-850,
+  "gray-900": $gray-900,
+  "gray-950": $gray-950,
+  "dark-gray": $dark-gray,
+  "light-gray": $light-gray,
+  "black": $black,
+  "white": #fff
+);
+
+$more-roundend: (
+  "4": 0.4rem,
+  "5": 0.5rem,
+  "6": 0.6rem,
+  "7": 0.7rem,
+  "8": 0.8rem,
+  "10": 10px
+);
+
+//buttons
+$btn-font-family: "fontRegular", sans-serif;
+$btn-font-weight: 600;
+$btn-line-height: 71%;
+
+$btn-padding-y: 0.75rem;
+$btn-padding-y-sm: 0.625rem;
+$btn-padding-y-lg: 0.875rem;
+
+$btn-padding-x: 1.25rem;
+$btn-padding-x-sm: $btn-padding-x;
+$btn-padding-x-lg: $btn-padding-x;
+
+$btn-font-size: 0.75rem;
+$btn-font-size-sm: 0.5rem;
+$btn-font-size-lg: 1rem;
+
+$btn-border-radius: 1.25rem;
+$btn-border-radius-sm: $btn-border-radius;
+$btn-border-radius-lg: $btn-border-radius;
+
+//pagination
+$pagination-color: $gray;
+$pagination-bg: $bg;
+$pagination-border-color: $bg;
+$pagination-disabled-bg: $bg;
+$pagination-disabled-border-color: $bg;
+$pagination-active-bg: $primary;
+$pagination-active-border-color: $primary;
+$pagination-border-radius: 8px;
+$pagination-hover-bg: $bg;
+$pagination-hover-border-color: $bg;
+$pagination-hover-color: $white;
+$pagination-focus-bg: $bg;
+$pagination-focus-outline: $bg;
+
+$form-check-input-bg: $bg-shadow;
+$form-check-input-border: 1px solid $gray;
+$form-check-input-focus-border: $primary;
+$form-check-input-checked-bg-color: $primary;
+$form-check-input-checked-border-color: $primary;
+
+$enable-validation-icons: false;
+
+$modal-content-border-radius: math.div($m, 2);
+
+$input-border-radius: 8px;
+
+// Tooltip
+$tooltip-opacity: 1;
+$tooltip-bg: $white;
+$tooltip-color: $light-gray;
+$tooltip-arrow-color: $white;
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/utilities";
+
+$theme-colors: map-merge($theme-colors, map-merge($more-bg, $more-colors));
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "shadow":
+      map-merge(
+        map-get($utilities, "shadow"),
+        (
+          state: hover
+        )
+      ),
+    "border":
+      map-merge(
+        map-get($utilities, "border"),
+        (
+          state: hover
+        )
+      ),
+    "border-bottom":
+      map-merge(
+        map-get($utilities, "border-bottom"),
+        (
+          state: hover
+        )
+      ),
+    "border-top":
+      map-merge(
+        map-get($utilities, "border-top"),
+        (
+          state: hover
+        )
+      ),
+    "border-color":
+      map-merge(
+        map-get($utilities, "border-color"),
+        (
+          state: hover,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              $more-colors
+            )
+        )
+      ),
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          state: hover,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              $more-colors
+            )
+        )
+      ),
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          state: hover,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              $more-bg
+            )
+        )
+      ),
+    "opacity":
+      map-merge(
+        map-get($utilities, "opacity"),
+        (
+          state: hover,
+          values: map-get(map-get($utilities, "opacity"), "values")
+        )
+      ),
+    "rounded":
+      map-merge(
+        map-get($utilities, "rounded"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "rounded"), "values"),
+              $more-roundend
+            )
+        )
+      )
+  )
+);
