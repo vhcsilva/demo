@@ -3,9 +3,11 @@ import {useRouter} from "next/router";
 
 import BountyStatusInfo from "./BountyStatusInfo";
 import Image from "next/image";
+import { useCustomization } from "../contexts/customization";
 
 export default function BountiesListItem({ issue }) {
   const router = useRouter();
+  const { token, name } = useCustomization();
 
   const isFundingRequest = issue.fundingAmount > 0;
 
@@ -64,7 +66,7 @@ export default function BountiesListItem({ issue }) {
                 !isActive ? "text-primary" : "text-white-40"
               }`}
             >
-              {issue.token}
+              {token || "BEPRO"}
             </label>
           </span>
         </div>
@@ -95,10 +97,10 @@ export default function BountiesListItem({ issue }) {
       className="bg-shadow list-item p-3"
       onClick={() => {
         router.push({
-          pathname: "/[network]/bounty",
+          pathname: "/bounty",
           query: {
-            id: issue.id,
-            network: router.query.network
+            ...router.query,
+            id: issue.id
           },
         });
       }}
@@ -124,7 +126,7 @@ export default function BountiesListItem({ issue }) {
 
               <div className="bg-primary rounded-4 px-2 py-1">
                 <span className="caption-medium text-uppercase mw-github-info">
-                  {issue.repository}
+                  {name || "BEPRO"}
                 </span>
               </div>
             </div>

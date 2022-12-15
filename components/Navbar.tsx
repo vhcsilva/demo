@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 
-
-import { useState } from "react";
 import HelpIcon from "../assets/icons/help-icon";
 import PlusIcon from "../assets/icons/plus-icon";
 
@@ -10,13 +9,10 @@ import NavAvatar from "./NavAvatar";
 import TransactionsStateIndicator from "./TransactionIndicator";
 import CreateBountyModal from "./CreateBountyModal";
 
-import Image from "next/image";
-import { useRouter } from "next/router";
+import { useCustomization } from "../contexts/customization";
 
-export default function Navbar() {
-  const { query } = useRouter();
-
-  const [showModal, setShowModal] = useState(false);
+export default function Navbar({ showModal, setShowModal }) {
+  const { logo } = useCustomization();
 
   return (
     <div className="nav-container">
@@ -25,8 +21,8 @@ export default function Navbar() {
           className={`d-flex flex-row align-items-center justify-content-between px-3 py-0`}
         >
           <div className="d-flex">
-            <Image
-              src={`/images/Bepro_Logo_Light.svg`}
+            <img
+              src={logo?.preview || `/images/Bepro_Logo_Light.svg`}
               width={104}
               height={32}
               alt="Logo"
@@ -35,7 +31,7 @@ export default function Navbar() {
             <ul className="nav-links">
                 <li>
                   <InternalLink
-                    href={`/${query?.network}`}
+                    href={`/`}
                     label="Developers"
                   />
                 </li>
@@ -86,10 +82,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <CreateBountyModal
-        show={showModal}
-        handleClose={() => setShowModal(false)}
-      />
+      <div>
+        <CreateBountyModal
+          show={showModal}
+          handleClose={() => setShowModal(false)}
+        />
+      </div>
+      
     </div>
   );
 }

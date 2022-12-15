@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 
 import {useRouter} from "next/router";
 
-import BountyHero from "../../components/BountyHero";
-import FundingSection from "../../components/FundingSection";
-import BountyComments from "../../components/BountyComments";
-import BountyDescription from "../../components/BountyDescription";
-import BountyRoadmap from "../../components/BountyRoadmap";
+import BountyHero from "../components/BountyHero";
+import FundingSection from "../components/FundingSection";
+import BountyComments from "../components/BountyComments";
+import BountyDescription from "../components/BountyDescription";
+import BountyRoadmap from "../components/BountyRoadmap";
 
-import bounties from "../../mocks/bounties";
+import bounties from "../mocks/bounties";
+import ThemeInjector from "../components/ThemeInjector";
 
 export default function PageIssue() {
   const router = useRouter();
@@ -23,6 +24,7 @@ export default function PageIssue() {
 
   return (
     <div className="pt-5">
+      <ThemeInjector />
       <BountyHero />
 
       <FundingSection />

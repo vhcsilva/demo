@@ -74,13 +74,14 @@ export default function Modal({
       <ModalBootstrap.Header
         className={`relative d-flex w-100 flex-column justify-content-${titlePosition} `}
       >
-        <ModalBootstrap.Title
+        { title && <ModalBootstrap.Title
           className={`pt-3 text-white ${titleClass || ""} ${
             centerTitle ? "text-center w-100" : ""
           }`}
         >
-          <h3>{titleComponent || title}</h3>
+          <h3>{titleComponent || title} &#8205;</h3>
         </ModalBootstrap.Title>
+        }
 
         {subTitle || subTitleComponent && <p className="text-white caption-small">{subTitleComponent || subTitle }</p>}
 

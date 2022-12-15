@@ -1,5 +1,6 @@
 import { components as RSComponents, SingleValueProps } from "react-select";
 import Creatable from "react-select/creatable";
+import { useCustomization } from "../contexts/customization";
 export default function TokensDropdown({
   defaultToken,
   tokens,
@@ -10,10 +11,10 @@ export default function TokensDropdown({
   description = undefined,
   userAddress,
   disabled = false,
-  token,
   showCurrencyValue = true,
   needsBalance
 }: any) {
+  const { name, token } = useCustomization();
   function SelectOptionComponent({ innerProps, innerRef, data }) {
     const { name, symbol, currentValue, icon } = data.value;
 
@@ -91,8 +92,8 @@ export default function TokensDropdown({
         classNamePrefix="react-select"
         createOptionPosition="first"
         defaultValue={{
-          name: "Bepro Network", 
-          symbol: "BEPRO",
+          name: name || "Bepro Network", 
+          symbol: token || "BEPRO",
           currentValue: 1000000,
           icon: ""
         }}

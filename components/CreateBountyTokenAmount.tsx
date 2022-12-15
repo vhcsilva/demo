@@ -1,3 +1,4 @@
+import { useCustomization } from "../contexts/customization";
 import InputNumber from "./InputNumber";
 import TokensDropdown from "./TokensDropdown";
 
@@ -18,6 +19,8 @@ export default function CreateBountyTokenAmount({
   needValueValidation,
   decimals = 18
 }: any) {
+  const { token } = useCustomization();
+
   return (
     <div className="container">
       <div className="col-md-12 mt-4">
@@ -46,7 +49,7 @@ export default function CreateBountyTokenAmount({
                 </label>
               </div>
             }
-            symbol="BEPRO"
+            symbol={token || "BEPRO"}
             placeholder="0"
             allowNegative={false}
             decimalScale={decimals}

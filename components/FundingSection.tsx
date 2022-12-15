@@ -7,15 +7,17 @@ import Button from "./Button";
 
 import CustomContainer from "./CustomContainer";
 import bounties from "../mocks/bounties";
+import { useCustomization } from "../contexts/customization";
 
 export default function FundingSection() {
   const [bounty, setBounty] = useState<any>(null);
+  const { token } = useCustomization();
 
   useEffect(() => {
     setBounty(bounties.find( b => b.id === "69"));
   }, []);
 
-  const transactionalSymbol = bounty?.token;
+  const transactionalSymbol = token || "USDC";
 
   return(
     <CustomContainer className="mt-3">

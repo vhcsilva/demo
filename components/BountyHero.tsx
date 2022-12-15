@@ -6,9 +6,13 @@ import BountyStatusInfo from "./BountyStatusInfo";
 import CustomContainer from "./CustomContainer";
 
 import bounties from "../mocks/bounties";
+import { useRouter } from "next/router";
+import { useCustomization } from "../contexts/customization";
 
 export default function BountyHero() {
   const [bounty, setBounty] = useState<any>(null);
+
+  const { token, name } = useCustomization();
 
   useEffect(() => {
     setBounty(bounties.find( b => b.id === "69"));
@@ -21,7 +25,7 @@ export default function BountyHero() {
           <div className="col-10 row">
             <div className="d-flex flex-row">
               <h4 className="me-2 text-white-70">#{bounty?.id}</h4>
-              <h4>{bounty?.title}</h4>
+              <h4>{bounty?.title} &#8205;</h4>
             </div>
             
             <div className="mt-3 pt-1 d-inline-flex align-items-center justify-content-md-start gap-20">
@@ -47,7 +51,7 @@ export default function BountyHero() {
                 <GithubInfo
                     parent="list"
                     variant="repository"
-                    label={bounty?.repository}
+                    label={name || bounty?.repository}
                   />
               </span>
 
@@ -87,7 +91,7 @@ export default function BountyHero() {
               <span className="text-white caption-large">
                 {bounty?.amount?.toLocaleString('en-US', { currency: "USD"})}
               </span>
-              <span className="text-primary ms-2 caption-medium">{bounty?.token}</span>
+              <span className="text-primary ms-2 caption-medium">{token || "BEPRO"}</span>
             </div>
           </div>
         </div>

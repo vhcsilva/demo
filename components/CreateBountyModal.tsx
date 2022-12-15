@@ -1,5 +1,5 @@
-import {useEffect, useState,} from "react";
-import {FormCheck} from "react-bootstrap";
+import {useEffect, useState, useRef, useCallback} from "react";
+import { useCustomization } from "../contexts/customization";
 
 import BranchesDropdown from "./BranchesDropdown";
 import Button from "./Button";
@@ -18,6 +18,8 @@ export default function CreateBountyModal({
   const [currentSection, setCurrentSection] = useState<number>(0);
   const [isBountyType, setisBountyType] = useState<boolean>(true);
   const [progressPercentage, setProgressPercentage] = useState<number>(0);
+
+  const { name } = useCustomization();
 
   const steps = [
     "Details",
@@ -84,8 +86,8 @@ export default function CreateBountyModal({
             <div className="col-md-6">
               <ReposDropdown
                 value={{
-                  label: "bepro",
-                  value: "bepro"
+                  label: name || "BEPRO",
+                  value: name || "BEPRO"
                 }}
               />
             </div>
@@ -115,7 +117,7 @@ export default function CreateBountyModal({
               <GithubInfo
                 parent="list"
                 variant="repository"
-                label="bepro"
+                label={name || "BEPRO"}
                 simpleDisabled={true}
               />
               </div>
@@ -174,6 +176,7 @@ export default function CreateBountyModal({
         title="Create New Bounty"
         titlePosition="center"
         onCloseClick={handleClose}
+        id="create-bounty-modal"
         footer={
           <>
             <div className="d-flex flex-row justify-content-between">
