@@ -2,7 +2,7 @@ import CopyIcon from "../assets/icons/copy-icon";
 import DownloadIcon from "../assets/icons/download-icon";
 import EditIcon from "../assets/icons/edit-icon";
 
-export default function StatusBar({ takeScreenshot, setShowEditModal }) {
+export default function StatusBar({ takeScreenshot, setShowEditModal, setShowDownloadModal }) {
 
   return (
     <div
@@ -17,7 +17,7 @@ export default function StatusBar({ takeScreenshot, setShowEditModal }) {
         <CopyIcon />
       </button>
 
-      <button className="action-button">
+      <button className="action-button" onClick={setShowDownloadModal}>
         <DownloadIcon />
       </button>
     </div>

@@ -11,11 +11,13 @@ import { CustomizationContextProvider } from '../contexts/customization';
 import EditModal from '../components/EditModal';
 import { useRouter } from 'next/router';
 import Toaster from '../components/Toaster';
+import DownloadImagesModal from '../components/DownloadImagesModal';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [showErrorToast, setShowErrorToast] = useState(false);
 
@@ -99,11 +101,20 @@ export default function App({ Component, pageProps }: AppProps) {
       <StatusBar 
         takeScreenshot={takeScreenshot} 
         setShowEditModal={() => setShowEditModal(true)}
+        setShowDownloadModal={() => setShowDownloadModal(true)}
       />
 
       <EditModal
         show={showEditModal}
         onClose={() => setShowEditModal(false)}
+      />
+
+      <DownloadImagesModal
+        show={showDownloadModal}
+        onClose={() => setShowDownloadModal(false)}
+        homePrint={homePrint}
+        bountyPrint={bountyPrint}
+        modalPrint={modalPrint}
       />
     </CustomizationContextProvider>
   );
