@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 
-import { useRouter } from "next/router";
-
 import FilterIcon from "../assets/icons/filter-icon";
 
 import Button from "./Button";
@@ -50,7 +48,7 @@ export default function BountiesFilters() {
   return (
     <div className="position-relative d-flex justify-content-end" ref={node}>
       <Button
-        color="black"
+        color="gray-900"
         className={`${(show && "border-primary") || ""} rounded-8 m-0`}
         onClick={() => setShow(!show)}
       >

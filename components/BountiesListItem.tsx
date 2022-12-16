@@ -94,7 +94,7 @@ export default function BountiesListItem({ issue }) {
 
   return (
     <div
-      className="bg-shadow list-item p-3"
+      className="bg-gray-900 list-item p-3"
       onClick={() => {
         router.push({
           pathname: "/bounty",

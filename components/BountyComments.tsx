@@ -3,7 +3,7 @@ export default function BountyComments({ comments = [], repo, issueId }) {
     <div className="container mb-5">
       <div className="row justify-content-center">
         <div className="col-md-10">
-          <div className="content-wrapper">
+          <div className="content-wrapper bg-gray-950 border border-gray-700">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h3 className="caption-large mb-0">
                 Comments

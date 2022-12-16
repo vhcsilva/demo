@@ -10,6 +10,7 @@ import TransactionsStateIndicator from "./TransactionIndicator";
 import CreateBountyModal from "./CreateBountyModal";
 
 import { useCustomization } from "../contexts/customization";
+import DotIcon from "../assets/icons/dot-icon";
 
 export default function Navbar({ showModal, setShowModal }) {
   const { logo } = useCustomization();
@@ -27,6 +28,17 @@ export default function Navbar({ showModal, setShowModal }) {
               height={32}
               alt="Logo"
             />
+
+            <div className="ml-3 pl-1">
+              <Button
+                textClass="text-gray-100"
+                color="gray-900"
+                className="font-weight-normal border border-gray-700"
+              >
+                <DotIcon />
+                <span>Hacklayer 1.0</span>
+              </Button>
+            </div>
 
             <ul className="nav-links">
                 <li>
@@ -59,7 +71,6 @@ export default function Navbar({ showModal, setShowModal }) {
 
           <div className="d-flex flex-row align-items-center gap-20">
             <Button
-              outline
               textClass="text-white"
               onClick={() => setShowModal(true)}
             >
@@ -68,11 +79,10 @@ export default function Navbar({ showModal, setShowModal }) {
             </Button>
 
             <Button
-              className="opacity-75 opacity-100-hover"
-              transparent
-              rounded
+              color="gray-900 svg-16"
+              className="p-12"
             >
-              <HelpIcon />
+              <span><HelpIcon /></span>
             </Button>
 
             <TransactionsStateIndicator />

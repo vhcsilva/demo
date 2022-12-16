@@ -5,11 +5,10 @@ import Button from "./Button";
 export default function TransactionsStateIndicator() {
   return (
     <Button
-      className="opacity-75 opacity-100-hover"
-      transparent
-      rounded
+      color="gray-900 svg-16"
+      className="p-12"
     >
-      <TransactionIcon color="bg-opac" />
+      <span><TransactionIcon color="bg-opac" /></span>
     </Button>
   );
 }

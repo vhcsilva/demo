@@ -46,7 +46,7 @@ export default function BountyRoadmap() {
               style={labelStyle}
             >
               <label
-                className={`text-uppercase caption mb-1 text-${currentItem ? stepColor : "gray"}`}
+                className={`text-uppercase caption mb-1 text-${currentItem ? stepColor : "gray-700"}`}
               >
                 {stepLabel}
               </label>
@@ -61,7 +61,7 @@ export default function BountyRoadmap() {
     <div className="container">
       <div className="row">
         <div className="ps-0 col-md-12">
-          <div className="content-wrapper mb-4 pb-0 pt-0 issue-proposal-progress">
+          <div className="content-wrapper mb-4 pb-0 pt-0 issue-proposal-progress bg-gray-950 border border-gray-700">
             <div className="d-flex justify-content-start mb-3 pt-4">
               <span className="caption-large">Bounty state</span>
             </div>

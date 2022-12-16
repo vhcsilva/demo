@@ -256,6 +256,22 @@ li {
   }
 }
 
+.react-select-gray {
+  .react-select__control {
+    background-color: $gray-900 !important;
+      &--menu-is-open {
+        background: $gray-900 !important;
+      }
+      &--is-disabled {
+        background-color: $gray-900 !important;
+      }
+  }
+
+  .react-select__menu {
+    background-color: $gray-900 !important;
+  }
+}
+
 .form-control {
   min-width: 100px;
   border-color: transparent;
@@ -1819,4 +1835,15 @@ input[type="color"] {
       }
     }
   }
+}
+
+.svg-16 {
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+.p-12 {
+  padding: 12px !important;
 }

@@ -32,7 +32,7 @@ export default function FundingSection() {
         }
       />
       
-      <Row className="border-radius-8 bg-shadow mt-3 mx-0 p-2 border border-disabled">
+      <Row className="border-radius-8 bg-gray-900 mt-3 mx-0 p-2 border border-gray-700">
         <Col className="d-grid gap-2">
           <RowWithTwoColumns
             col1={<CaptionMedium text="Current Funding" />}

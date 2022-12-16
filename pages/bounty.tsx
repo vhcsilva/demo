@@ -10,6 +10,7 @@ import BountyRoadmap from "../components/BountyRoadmap";
 
 import bounties from "../mocks/bounties";
 import ThemeInjector from "../components/ThemeInjector";
+import CustomContainer from "../components/CustomContainer";
 
 export default function PageIssue() {
   const router = useRouter();
@@ -30,6 +31,9 @@ export default function PageIssue() {
       <FundingSection />
 
       <div className="container mb-1 mt-4">
+        <CustomContainer>
+          <p className="text-white h4 mb-3">Bounty Details</p>
+        </CustomContainer>
         <div className="d-flex bd-highlight justify-content-center mx-2 px-4">
           <div className="ps-3 pe-0 ms-0 me-2 w-65 bd-highlight">
             <div className="container">

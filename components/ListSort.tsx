@@ -49,6 +49,7 @@ export default function ListSort({
       options={options}
       isSearchable={false}
       onChange={handleSelectChange}
+      className="react-select-gray"
     />
   );
 }

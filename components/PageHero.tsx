@@ -18,7 +18,7 @@ function InfoComponent(info: InfosHero) {
   if (info.currency) {
     return (
       <div className="col px-2">
-        <div className="border-top border-2 mb-2"></div>
+        <div className="border-top border-2 border-gray-850 mb-2"></div>
         <div className="d-flex flex-row align-items-top">
           <span className="h4 text-white">
             {info.value}
@@ -28,16 +28,16 @@ function InfoComponent(info: InfosHero) {
             ${info.currency}
           </span>
         </div>
-        <span className="caption-small text-gray">{info.label}</span>
+        <span className="caption-small text-gray-700 font-weight-medium">{info.label}</span>
       </div>
     );
   }
 
   return (
     <div className="col px-2">
-      <div className="border-top border-2 mb-2"></div>
+      <div className="border-top border-2 border-gray-850 mb-2"></div>
       <h4 className="text-white">{info.value}</h4>
-      <span className="caption-small text-gray">{info.label}</span>
+      <span className="caption-small text-gray-700 font-weight-medium">{info.label}</span>
     </div>
   );
 }
@@ -51,7 +51,7 @@ export default function PageHero({ title, subtitle, infos }: PageHeroProps) {
             <h2 className="text-white mr-1">{title}</h2>
           </div>
 
-          <span className="mt-1 caption-medium text-white-70">
+          <span className="mt-1 caption-medium text-gray-500 font-weight-medium">
             {subtitle}
           </span>
 

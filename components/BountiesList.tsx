@@ -23,20 +23,20 @@ export default function BountiesList() {
         >
           <div className="w-100">
             <InputGroup className="border-radius-8">
-              <InputGroup.Text className="cursor-pointer">
+              <InputGroup.Text className="cursor-pointer bg-gray-900">
                 <SearchIcon />
               </InputGroup.Text>
 
               <FormControl
-                className="p-2"
+                className="p-2 bg-gray-900"
                 placeholder="Search for a bounty"
               />
             </InputGroup>
           </div>
 
           <div className="d-flex align-items-center">
-            <span className="caption-small text-white-50 text-nowrap mr-1">
-              Sort
+            <span className="caption-small text-gray-500 text-nowrap mr-1 font-weight-medium">
+              Sort by
             </span>
 
             <ListSort
