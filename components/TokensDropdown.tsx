@@ -40,7 +40,7 @@ export default function TokensDropdown({
               <span>
                 {currentValue?.toLocaleString('en-US', { currency: "USD"})}
                 <span className="text-primary">
-                  {symbol}
+                  ${symbol}
                 </span>
               </span>}
         </div>
@@ -93,7 +93,7 @@ export default function TokensDropdown({
         createOptionPosition="first"
         defaultValue={{
           name: name || "Bepro Network", 
-          symbol: token || "BEPRO",
+          symbol: `$${token || "BEPRO"}`,
           currentValue: 1000000,
           icon: ""
         }}

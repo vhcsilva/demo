@@ -66,7 +66,7 @@ export default function BountiesListItem({ issue }) {
                 !isActive ? "text-primary" : "text-white-40"
               }`}
             >
-              {token || "BEPRO"}
+              ${token || "BEPRO"}
             </label>
           </span>
         </div>

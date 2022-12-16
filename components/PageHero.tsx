@@ -25,7 +25,7 @@ function InfoComponent(info: InfosHero) {
           </span>
           
           <span className="caption-medium text-primary ml-1 mt-1">
-            {info.currency}
+            ${info.currency}
           </span>
         </div>
         <span className="caption-small text-gray">{info.label}</span>

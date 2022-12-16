@@ -91,7 +91,7 @@ export default function BountyHero() {
               <span className="text-white caption-large">
                 {bounty?.amount?.toLocaleString('en-US', { currency: "USD"})}
               </span>
-              <span className="text-primary ms-2 caption-medium">{token || "BEPRO"}</span>
+              <span className="text-primary ms-2 caption-medium">${token || "BEPRO"}</span>
             </div>
           </div>
         </div>

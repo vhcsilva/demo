@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
 import ColorInput from "./ColorInput";
 
 export default function ColorPicker({
@@ -14,12 +15,20 @@ export default function ColorPicker({
     "#9669ED"
   ]);
 
-  function handleSet(color) {
-    setSelected(color.replace("#", ""));
-
+  function handleAdd(color) {
     if (!colors.find(c => c === color))
       setColors([...colors.slice(0, 5), color]);
   }
+
+  function handleSet(color) {
+    setSelected(color.replace("#", ""));
+
+    handleAdd(color);
+  }
+
+  useEffect(() => {
+    if (selected) handleAdd(`#${selected}`);
+  }, [selected]);
 
   return(
     <div className="d-flex flex-row gap-2">

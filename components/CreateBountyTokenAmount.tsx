@@ -49,7 +49,7 @@ export default function CreateBountyTokenAmount({
                 </label>
               </div>
             }
-            symbol={token || "BEPRO"}
+            symbol={`$${token || "BEPRO"}`}
             placeholder="0"
             allowNegative={false}
             decimalScale={decimals}

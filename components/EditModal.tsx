@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCustomization } from "../contexts/customization";
 import Button from "./Button";
 import ImageUploader from "./ImageUploader";
@@ -21,23 +22,15 @@ export default function EditModal({
 }) {
   const { logo, name, token, primary, setLogo, setToken, setName, setPrimary } = useCustomization();
 
-  const [newLogo, setNewLogo] = useState<UploadImage>({ preview: undefined, raw: undefined });
+  const [newLogo, setNewLogo] = useState<UploadImage>();
   const [newName, setNewName] = useState<string>();
   const [newToken, setNewToken] = useState<string>();
   const [newPrimary, setNewPrimary] = useState<string>();
   const [isLoading, setIsLoading] = useState(false);
 
-  function handleClose() {
-    if (isLoading) return;
-
-    setNewLogo({ preview: "", raw: undefined });
-    setNewName("");
-    setNewToken("");
-    setNewPrimary("");
-    onClose();
-  }
-
   async function handleUpdate() {
+    if (!newLogo) return;
+
     setIsLoading(true);
 
     const image =  await psReadAsText(newLogo.raw as File);
@@ -48,17 +41,24 @@ export default function EditModal({
         setPrimary(newPrimary);
         setLogo({ preview: `${ipfsPublicEndpoint}/${path}`, raw: undefined});
         setToken(newToken);
-        handleClose();
+        onClose();
       })
       .finally(() => setIsLoading(false));
   }
+
+  useEffect(() => {
+    if (!newLogo) setNewLogo(logo);
+    if (!newName) setNewName(name);
+    if (!newToken) setNewToken(token);
+    if (!newPrimary) setNewPrimary(primary);
+  }, [logo, name, token, primary]);
 
   return(
     <Modal
       show={show}
       size="lg"
     >
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column edit-modal">
         <span className="family-Regular text-primary text-uppercase">Try it out</span>
         <h4 className="font-weight-medium mb-2">Bounty Network</h4>
         <span className="text-gray-500 family-Regular">Manage your network details.</span>
@@ -85,7 +85,12 @@ export default function EditModal({
 
         <div className="col-8 mb-2">
           <label className="family-Regular text-14">Network TOKEN</label>
-          <input type="text" className="form-control" value={newToken} onChange={e => setNewToken(e.target.value)} />
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text">$</span>
+            </div>
+            <input type="text" className="form-control" value={newToken} onChange={e => setNewToken(e.target.value)} />
+          </div>
         </div>
 
         <div className="col-8">
@@ -103,7 +108,7 @@ export default function EditModal({
             Update
           </Button>
 
-          <Button color="shadow" onClick={handleClose} disabled={isLoading}>
+          <Button color="shadow" onClick={onClose} disabled={isLoading}>
             Cancel
           </Button>
         </div>

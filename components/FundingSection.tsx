@@ -17,7 +17,7 @@ export default function FundingSection() {
     setBounty(bounties.find( b => b.id === "69"));
   }, []);
 
-  const transactionalSymbol = token || "USDC";
+  const transactionalSymbol = `$${token || "USDC"}`;
 
   return(
     <CustomContainer className="mt-3">
