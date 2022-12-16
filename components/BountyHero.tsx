@@ -26,7 +26,7 @@ export default function BountyHero() {
         <div className="d-flex flex-row">
           <div className="col-12 col">
             <div className="row border-bottom border-gray-850">
-              <Link href="/" className="text-decoration-none text-primary caption-medium font-weight-medium d-flex flex-row align-items-center gap-2 pb-3">
+              <Link href="/" className="text-decoration-none svg-primary text-primary caption-medium font-weight-medium d-flex flex-row align-items-center gap-2 pb-3">
                 <BackIcon />
                 Back to bounties explorer
               </Link>
